@@ -1,3 +1,37 @@
-baseURL: https://example.org/
+baseURL: https://modern-talking.gr/
 languageCode: en-us
-title: My New Hugo Site
+title: Modern Talking GR
+subtitle: The unofficial Greek Fan Club of Modern Talking
+theme: stage
+params:
+
+  # Website information
+  title: "Modern Talking GR"
+  subtitle: "The unofficial Greek Fan Club of Modern Talking"
+  coverimage: "/modern-talking-logo.png"
+
+  # Social information
+  social:
+    facebook: "http://facebook.com/"
+    soundcloud: "http://soundcloud.com/"
+    reverbnation: "http://reverbnation.com/"
+    contact: "/"
+
+  # Artist information
+  authors:
+    stage:
+      name: "Stage"
+      description: "Enter an artist description here."
+      image: "/mt40.jpg"
+      link: "/"
+
+  # Navbar links
+  navbar:
+    blog: "/post/"
+    bio: "/"
+    music: "/album/"
+    events: "/event/"
+    media: "/media/"
+
+  fonts: "Lato:300,500,700"
+  maps: "true"
