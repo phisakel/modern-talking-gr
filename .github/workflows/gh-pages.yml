@@ -28,6 +28,8 @@ jobs:
       - name: Install NPM Dependencies
         run: npm i
 
+      - name: Generate Content
+        run: node scripts/generate-content.js
 
       - name: Build
         run: hugo --minify --baseURL=https://modern-talking.gr
