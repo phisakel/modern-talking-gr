@@ -6,7 +6,11 @@ const albumsData = JSON.parse(fs.readFileSync('data/mt-albums.json', 'utf8'));
 const tracksData = JSON.parse(fs.readFileSync('data/mt-tracks.json', 'utf8'));
 
 // Function to generate markdown content for albums
-function generateAlbumMarkdown(album) {
+function generateAlbumMarkdown(album, tracks) {
+  const tracksMarkdown = tracks.map(track => `  - title: "${track.trackName}"
+    link: "${track.trackViewUrl}"
+    preview: "${track.previewUrl}"`).join('\n');
+
   return `---
 title: "${album.collectionName}"
 album:
@@ -18,6 +22,8 @@ coverimage: "${album.artworkUrl100}"
 excerpt: "${album.collectionName}"
 description: "${album.collectionName}"
 author: "${album.artistName}"
+tracks:
+${tracksMarkdown}
 ---
 `;
 }
@@ -42,9 +48,24 @@ author: "${track.artistName}"
 `;
 }
 
+// Function to group tracks by album
+function groupTracksByAlbum(tracks) {
+  return tracks.reduce((acc, track) => {
+    if (!acc[track.collectionId]) {
+      acc[track.collectionId] = [];
+    }
+    acc[track.collectionId].push(track);
+    return acc;
+  }, {});
+}
+
+// Group tracks by album
+const tracksByAlbum = groupTracksByAlbum(tracksData.results);
+
 // Generate markdown files for albums
 albumsData.results.forEach(album => {
-  const albumMarkdown = generateAlbumMarkdown(album);
+  const albumTracks = tracksByAlbum[album.collectionId] || [];
+  const albumMarkdown = generateAlbumMarkdown(album, albumTracks);
   const albumFilePath = path.join('content/album', `${album.collectionId}.md`);
   fs.writeFileSync(albumFilePath, albumMarkdown);
 });
