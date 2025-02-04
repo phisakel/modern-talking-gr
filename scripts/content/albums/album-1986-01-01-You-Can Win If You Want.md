@@ -1,0 +1,14 @@
+---
+title: "You Can Win If You Want"
+album:
+  link: "https://music.apple.com/us/album/you-can-win-if-you-want/253953575?uo=4"
+  image: "https://is1-ssl.mzstatic.com/image/thumb/Music/b3/04/04/mzi.xdpiujmh.jpg/100x100bb.jpg"
+purchase:
+  itunes: "https://music.apple.com/us/album/you-can-win-if-you-want/253953575?uo=4"
+coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/b3/04/04/mzi.xdpiujmh.jpg/100x100bb.jpg"
+excerpt: "You Can Win If You Want"
+description: "You Can Win If You Want"
+author: "Modern Talking"
+tracks:
+
+---

@@ -1,0 +1,14 @@
+---
+title: "Victory"
+album:
+  link: "https://music.apple.com/us/album/victory/298348352?uo=4"
+  image: "https://is1-ssl.mzstatic.com/image/thumb/Music/e9/3e/73/mzi.clsklrir.jpg/100x100bb.jpg"
+purchase:
+  itunes: "https://music.apple.com/us/album/victory/298348352?uo=4"
+coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/e9/3e/73/mzi.clsklrir.jpg/100x100bb.jpg"
+excerpt: "Victory"
+description: "Victory"
+author: "Modern Talking"
+tracks:
+
+---
