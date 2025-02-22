@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/e3/67/71/mzi.xtzfdlbj.jpg/100x100bb.jpg"
 excerpt: "We Still Have Dreams - The Greatest Love Ballads of Modern Talking"
 description: "We Still Have Dreams - The Greatest Love Ballads of Modern Talking"
+Description: "We Still Have Dreams - The Greatest Love Ballads of Modern Talking"
+Date: "2002-09-02"
 author: "Modern Talking"
 tracks:
 

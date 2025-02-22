@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/02/43/78/mzi.cfeltsbg.jpg/100x100bb.jpg"
 excerpt: "America"
 description: "America"
+Description: "America"
+Date: "2001-03-13"
 author: "Modern Talking"
 tracks:
 

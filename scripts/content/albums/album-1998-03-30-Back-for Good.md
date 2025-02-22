@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/d4/56/89/mzi.hqzykjry.jpg/100x100bb.jpg"
 excerpt: "Back for Good"
 description: "Back for Good"
+Description: "Back for Good"
+Date: "1998-03-30"
 author: "Modern Talking"
 tracks:
   - title: "You're My Heart, You're My Soul (Modern Talking Mix '98)"

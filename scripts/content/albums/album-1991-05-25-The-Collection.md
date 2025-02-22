@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/42/0e/f1/mzi.hokmsaus.jpg/100x100bb.jpg"
 excerpt: "The Collection"
 description: "The Collection"
+Description: "The Collection"
+Date: "1991-05-25"
 author: "Modern Talking"
 tracks:
   - title: "Brother Louie"

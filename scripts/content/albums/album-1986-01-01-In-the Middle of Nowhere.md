@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/1d/d9/f0/mzi.yqhiwkqj.jpg/100x100bb.jpg"
 excerpt: "In the Middle of Nowhere"
 description: "In the Middle of Nowhere"
+Description: "In the Middle of Nowhere"
+Date: "1986-01-01"
 author: "Modern Talking"
 tracks:
 

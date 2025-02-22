@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/9c/65/46/mzi.ehuzpzfh.jpg/100x100bb.jpg"
 excerpt: "Ready for Romance"
 description: "Ready for Romance"
+Description: "Ready for Romance"
+Date: "1986-01-01"
 author: "Modern Talking"
 tracks:
   - title: "Brother Louie"

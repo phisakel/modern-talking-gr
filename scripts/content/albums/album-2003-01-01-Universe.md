@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/a9/10/8d/mzi.iaznswpa.jpg/100x100bb.jpg"
 excerpt: "Universe"
 description: "Universe"
+Description: "Universe"
+Date: "2003-01-01"
 author: "Modern Talking"
 tracks:
 

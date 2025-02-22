@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/1f/ef/b6/mzi.mjmoikvm.jpg/100x100bb.jpg"
 excerpt: "Remix Album"
 description: "Remix Album"
+Description: "Remix Album"
+Date: "2007-10-12"
 author: "Modern Talking"
 tracks:
   - title: "Cheri, Cheri Lady (Special Dance Version)"

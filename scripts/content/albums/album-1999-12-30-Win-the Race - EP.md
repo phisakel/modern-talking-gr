@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/df/76/94/mzi.jthmuytc.jpg/100x100bb.jpg"
 excerpt: "Win the Race - EP"
 description: "Win the Race - EP"
+Description: "Win the Race - EP"
+Date: "1999-12-30"
 author: "Modern Talking"
 tracks:
   - title: "Win the Race (Scooter Remix)"

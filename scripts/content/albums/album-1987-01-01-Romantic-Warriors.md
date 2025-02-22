@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/ae/c0/3e/mzi.txkiabyj.jpg/100x100bb.jpg"
 excerpt: "Romantic Warriors"
 description: "Romantic Warriors"
+Description: "Romantic Warriors"
+Date: "1987-01-01"
 author: "Modern Talking"
 tracks:
 

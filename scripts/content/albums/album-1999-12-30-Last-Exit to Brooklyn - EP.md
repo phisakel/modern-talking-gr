@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/3d/fd/64/mzi.vpxjbuwt.jpg/100x100bb.jpg"
 excerpt: "Last Exit to Brooklyn - EP"
 description: "Last Exit to Brooklyn - EP"
+Description: "Last Exit to Brooklyn - EP"
+Date: "1999-12-30"
 author: "Modern Talking"
 tracks:
   - title: "Last Exit to Brooklyn"

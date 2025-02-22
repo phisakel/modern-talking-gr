@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/67/25/ec/mzi.somokjrl.jpg/100x100bb.jpg"
 excerpt: "You're My Heart, You're My Soul"
 description: "You're My Heart, You're My Soul"
+Description: "You're My Heart, You're My Soul"
+Date: "1986-01-01"
 author: "Modern Talking"
 tracks:
   - title: "Cheri Cheri Lady"

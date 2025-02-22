@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/c3/8f/ed/mzi.wqdihkif.jpg/100x100bb.jpg"
 excerpt: "The Very Best of Modern Talking"
 description: "The Very Best of Modern Talking"
+Description: "The Very Best of Modern Talking"
+Date: "2002-07-09"
 author: "Modern Talking"
 tracks:
   - title: "You're My Heart, You're My Soul"

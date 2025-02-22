@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/b0/99/e8/b099e8f1-370d-7814-c75f-ae2e5313aaf6/mzi.ghqlcxdt.jpg/100x100bb.jpg"
 excerpt: "25 Years of Disco-Pop"
 description: "25 Years of Disco-Pop"
+Description: "25 Years of Disco-Pop"
+Date: "2010-01-22"
 author: "Modern Talking"
 tracks:
   - title: "You're My Heart, You're My Soul"

@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/c4/2b/92/mzi.siolvsre.jpg/100x100bb.jpg"
 excerpt: "Heart and Soul"
 description: "Heart and Soul"
+Description: "Heart and Soul"
+Date: "2010-05-07"
 author: "Modern Talking"
 tracks:
   - title: "You're My Heart, You're My Soul"

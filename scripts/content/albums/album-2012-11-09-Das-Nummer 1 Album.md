@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/v4/52/d3/5b/52d35bd4-27aa-77f9-cdce-c78fea663e9d/884977616101.jpg/100x100bb.jpg"
 excerpt: "Das Nummer 1 Album"
 description: "Das Nummer 1 Album"
+Description: "Das Nummer 1 Album"
+Date: "2012-11-09"
 author: "Modern Talking & Blue System"
 tracks:
   - title: "Space Mix '98"

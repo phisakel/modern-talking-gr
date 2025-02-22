@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/c0/c8/25/mzi.uieteayh.jpg/100x100bb.jpg"
 excerpt: "Back for Good"
 description: "Back for Good"
+Description: "Back for Good"
+Date: "1998-05-11"
 author: "Modern Talking"
 tracks:
   - title: "Brother Louie Mix '98 (Radio Edit) [feat. Eric Singleton]"

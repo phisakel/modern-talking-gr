@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/e3/11/40/mzi.vjohvtps.jpg/100x100bb.jpg"
 excerpt: "America - The 10th Album"
 description: "America - The 10th Album"
+Description: "America - The 10th Album"
+Date: "2001-03-07"
 author: "Modern Talking"
 tracks:
 

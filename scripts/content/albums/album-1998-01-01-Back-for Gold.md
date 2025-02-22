@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music127/v4/5e/99/5d/5e995de0-c115-05c1-57c8-ce0e5bd70a38/886446424491.jpg/100x100bb.jpg"
 excerpt: "Back for Gold"
 description: "Back for Gold"
+Description: "Back for Gold"
+Date: "1998-01-01"
 author: "Modern Talking"
 tracks:
   - title: "Modern Talking Pop Titan Megamix 2k17 (Full Long Version)"

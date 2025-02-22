@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/1d/c3/20/mzi.glbimmxp.jpg/100x100bb.jpg"
 excerpt: "Let's Talk About Love"
 description: "Let's Talk About Love"
+Description: "Let's Talk About Love"
+Date: "1985-01-01"
 author: "Modern Talking"
 tracks:
   - title: "Cheri Cheri Lady"

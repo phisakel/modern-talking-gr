@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/b3/04/04/mzi.xdpiujmh.jpg/100x100bb.jpg"
 excerpt: "You Can Win If You Want"
 description: "You Can Win If You Want"
+Description: "You Can Win If You Want"
+Date: "1986-01-01"
 author: "Modern Talking"
 tracks:
 

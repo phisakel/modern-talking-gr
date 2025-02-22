@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/a5/99/b6/a599b657-8b91-9b96-3f8b-dee3ab0d3d25/743215735724.jpg/100x100bb.jpg"
 excerpt: "You're My Heart, You're My Soul - EP"
 description: "You're My Heart, You're My Soul - EP"
+Description: "You're My Heart, You're My Soul - EP"
+Date: "1998-03-09"
 author: "Modern Talking"
 tracks:
   - title: "You're My Heart, You're My Soul (Modern Talking Mix '98) [feat. Eric Singleton]"

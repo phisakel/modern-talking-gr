@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/12/36/d2/mzi.gxlhfcli.jpg/100x100bb.jpg"
 excerpt: "Victory (The 11th Album)"
 description: "Victory (The 11th Album)"
+Description: "Victory (The 11th Album)"
+Date: "2002-01-01"
 author: "Modern Talking"
 tracks:
 

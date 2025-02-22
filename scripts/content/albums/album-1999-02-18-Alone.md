@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/bc/1d/da/mzi.jtsvahov.jpg/100x100bb.jpg"
 excerpt: "Alone"
 description: "Alone"
+Description: "Alone"
+Date: "1999-02-18"
 author: "Modern Talking"
 tracks:
 

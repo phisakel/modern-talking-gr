@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/cd/65/34/mzi.cvqyskrs.jpg/100x100bb.jpg"
 excerpt: "Year of the Dragon"
 description: "Year of the Dragon"
+Description: "Year of the Dragon"
+Date: "1999-03-05"
 author: "Modern Talking"
 tracks:
 

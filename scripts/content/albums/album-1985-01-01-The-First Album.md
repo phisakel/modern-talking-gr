@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/a5/e1/3f/mzi.litfcine.jpg/100x100bb.jpg"
 excerpt: "The First Album"
 description: "The First Album"
+Description: "The First Album"
+Date: "1985-01-01"
 author: "Modern Talking"
 tracks:
   - title: "Do You Wanna"

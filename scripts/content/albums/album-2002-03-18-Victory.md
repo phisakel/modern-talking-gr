@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/e9/3e/73/mzi.clsklrir.jpg/100x100bb.jpg"
 excerpt: "Victory"
 description: "Victory"
+Description: "Victory"
+Date: "2002-03-18"
 author: "Modern Talking"
 tracks:
 

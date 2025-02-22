@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/dd/3d/e1/mzi.igmuiloc.jpg/100x100bb.jpg"
 excerpt: "Remix Album"
 description: "Remix Album"
+Description: "Remix Album"
+Date: "2005-01-01"
 author: "Modern Talking"
 tracks:
   - title: "Brother Louie Mix '98 (feat. Eric Singleton) [Extended Version]"

@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music/11/29/1f/mzi.qtkpptdl.jpg/100x100bb.jpg"
 excerpt: "Nur das Beste: Modern Talking - Die großen Erfolge, Folge 2"
 description: "Nur das Beste: Modern Talking - Die großen Erfolge, Folge 2"
+Description: "Nur das Beste: Modern Talking - Die großen Erfolge, Folge 2"
+Date: "2006-07-28"
 author: "Modern Talking"
 tracks:
 

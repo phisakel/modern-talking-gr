@@ -21,6 +21,8 @@ purchase:
 coverimage: "${album.artworkUrl100}"
 excerpt: "${album.collectionName}"
 description: "${album.collectionName}"
+Description: "${album.collectionName}"
+Date: "${album.releaseDate.substring(0,10)}"
 author: "${album.artistName}"
 tracks:
 ${tracksMarkdown}

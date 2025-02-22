@@ -8,6 +8,8 @@ purchase:
 coverimage: "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/24/a6/f6/24a6f62d-4297-1c2e-2bab-42606cf428a0/888880209511.jpg/100x100bb.jpg"
 excerpt: "You're My Heart, You're My Soul - EP"
 description: "You're My Heart, You're My Soul - EP"
+Description: "You're My Heart, You're My Soul - EP"
+Date: "1986-01-01"
 author: "Modern Talking"
 tracks:
 
