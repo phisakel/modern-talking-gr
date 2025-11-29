@@ -2,7 +2,6 @@ baseURL: https://modern-talking.gr/
 languageCode: en-us
 title: Modern Talking GR
 subtitle: The unofficial Greek Fan Club of Modern Talking
-theme: stage
 
 # Allow raw HTML in markdown content
 markup:

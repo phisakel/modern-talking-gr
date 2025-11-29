@@ -1,0 +1,53 @@
+<!-- Track Metadata Partial -->
+<!-- Usage: {{ partial "track-meta.html" . }} -->
+
+<div class="track-metadata">
+  {{ if .Params.track_id }}
+  <dl class="dl-horizontal">
+    {{ with .Params.artist_name }}
+    <dt>Artist:</dt>
+    <dd><a href="{{ $.Params.artist_view_url }}">{{ . }}</a></dd>
+    {{ end }}
+    
+    {{ with .Params.album.title }}
+    <dt>Album:</dt>
+    <dd><a href="{{ $.Params.album.link }}">{{ . }}</a></dd>
+    {{ end }}
+    
+    {{ if and .Params.disc_number .Params.track_number }}
+    <dt>Track:</dt>
+    <dd>
+      {{ .Params.track_number }} of {{ .Params.track_count }}
+      {{ if gt .Params.disc_count 1 }}
+        (Disc {{ .Params.disc_number }})
+      {{ end }}
+    </dd>
+    {{ end }}
+    
+    {{ with .Params.track_duration_formatted }}
+    <dt>Duration:</dt>
+    <dd>{{ . }}</dd>
+    {{ end }}
+    
+    {{ with .Params.release_date }}
+    <dt>Released:</dt>
+    <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" . }}</time></dd>
+    {{ end }}
+    
+    {{ with .Params.primary_genre_name }}
+    <dt>Genre:</dt>
+    <dd>{{ . }}</dd>
+    {{ end }}
+    
+    {{ with .Params.track_price }}
+    <dt>Price:</dt>
+    <dd>${{ . }} {{ $.Params.currency }}</dd>
+    {{ end }}
+    
+    {{ if .Params.is_streamable }}
+    <dt>Streaming:</dt>
+    <dd><span class="label label-success">Available</span></dd>
+    {{ end }}
+  </dl>
+  {{ end }}
+</div>

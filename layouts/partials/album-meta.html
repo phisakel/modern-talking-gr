@@ -1,0 +1,50 @@
+<!-- Album Metadata Partial -->
+<!-- Usage: {{ partial "album-meta.html" . }} -->
+
+<div class="album-metadata">
+  {{ if .Params.collection_id }}
+  <dl class="dl-horizontal">
+    {{ with .Params.artist_name }}
+    <dt>Artist:</dt>
+    <dd><a href="{{ $.Params.artist_view_url }}">{{ . }}</a></dd>
+    {{ end }}
+    
+    {{ with .Params.release_date }}
+    <dt>Released:</dt>
+    <dd><time datetime="{{ . }}">{{ dateFormat "January 2, 2006" . }}</time></dd>
+    {{ end }}
+    
+    {{ with .Params.primary_genre_name }}
+    <dt>Genre:</dt>
+    <dd>{{ . }}</dd>
+    {{ end }}
+    
+    {{ with .Params.track_count }}
+    <dt>Tracks:</dt>
+    <dd>{{ . }}</dd>
+    {{ end }}
+    
+    {{ with .Params.total_duration_minutes }}
+    <dt>Duration:</dt>
+    <dd>{{ printf "%.0f" . }} minutes</dd>
+    {{ end }}
+    
+    {{ with .Params.collection_price }}
+    <dt>Price:</dt>
+    <dd>${{ . }} {{ $.Params.currency }}</dd>
+    {{ end }}
+    
+    {{ if .Params.collection_explicitness }}
+    {{ if eq .Params.collection_explicitness "explicit" }}
+    <dt>Content:</dt>
+    <dd><span class="label label-warning">Explicit</span></dd>
+    {{ end }}
+    {{ end }}
+    
+    {{ with .Params.copyright }}
+    <dt>Copyright:</dt>
+    <dd><small>{{ . }}</small></dd>
+    {{ end }}
+  </dl>
+  {{ end }}
+</div>
