@@ -1,0 +1,70 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+<div class="wrapper">
+  {{ with .Params.artwork_url_100 }}
+  {{ $imageUrl := replace . "/100x100bb.jpg" "/600x600bb.jpg" }}
+  <div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ $imageUrl }})"></div>
+  {{ end }}
+  <article id="main-container" >
+    <header class="container article-header">
+        <h1 class="title">{{ .Title }}</h1>
+        {{ with .Params.artist_name }}<h4 class="subtitle">by {{ . }}</h4>{{ end }}
+        <hr />
+    </header>
+    <section class="container article-content">
+      <div class="article-sidebar col-sm-3">
+          <ul class="sidebar-info">
+            {{ with .Params.artwork_url_100 }}
+            {{ $imageUrl := replace . "/100x100bb.jpg" "/600x600bb.jpg" }}
+            <li><img class="album-image" src="{{ $imageUrl }}" alt="{{ $.Title }}" /></li>
+            {{ end }}
+            {{ with .Params.artist_name }}
+            <li class="text-muted">Artist: <a href="{{ $.Params.artist_view_url }}">{{ . }}</a></li>
+            {{ end }}
+            {{ with .Params.release_date }}
+            <li class="text-muted">Released: <time datetime="{{ . }}">{{ dateFormat "January 2, 2006" . }}</time></li>
+            {{ end }}
+            {{ with .Params.primary_genre_name }}
+            <li class="text-muted">Genre: {{ . }}</li>
+            {{ end }}
+            {{ with .Params.track_count }}
+            <li class="text-muted">Tracks: {{ . }}</li>
+            {{ end }}
+            {{ with .Params.total_duration_minutes }}
+            <li class="text-muted">Duration: {{ printf "%.0f" . }} min</li>
+            {{ end }}
+            {{ with .Params.collection_price }}
+            <li class="text-muted">Price: ${{ . }} {{ $.Params.currency }}</li>
+            {{ end }}
+            {{ if .Params.collection_explicitness }}
+            {{ if eq .Params.collection_explicitness "explicit" }}
+            <li class="text-muted"><span class="label label-warning">Explicit</span></li>
+            {{ end }}
+            {{ end }}
+          </ul>
+          <ul class="sidebar-purchase">
+            {{ with .Params.purchase.itunes }}
+            <li><a href="{{ . }}" title="Buy on iTunes" target="_blank"><i class="fa fa-apple"></i></a></li>
+            {{ end }}
+            {{ with .Params.purchase.spotify }}
+            <li><a href="{{ . }}" title="Listen on Spotify" target="_blank"><i class="fa fa-spotify"></i></a></li>
+            {{ end }}
+            {{ with .Params.purchase.amazon }}
+            <li><a href="{{ . }}" title="Buy on Amazon" target="_blank">a</a></li>
+            {{ end }}
+            {{ with .Params.collection_view_url }}
+            <li><a href="{{ . }}" title="View on Apple Music" target="_blank"><i class="fa fa-music"></i></a></li>
+            {{ end }}
+          </ul>
+          {{ with .Params.copyright }}
+          <p class="text-muted small">{{ . }}</p>
+          {{ end }}
+      </div>
+      <div class="col-sm-9">
+          {{ .Content }}
+      </div>
+    </section>
+    {{ partial "articlefooter.html" . }}
+  </article>
+</div>
+{{ partial "footer.html" . }}

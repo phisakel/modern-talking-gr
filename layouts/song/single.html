@@ -1,0 +1,104 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+<div class="wrapper">
+  {{ with .Params.artwork_url_100 }}{{ $imageUrl := replace . "/100x100bb.jpg" "/600x600bb.jpg" }}<div class="article-cover" data-stellar-background-ratio="0.25" style="background-image: url({{ $imageUrl }})"></div>{{ end }}
+  <article id="main-container" >
+    <header class="container article-header">
+        <h1 class="title">{{ .Title }}</h1>
+        {{ with .Params.artist_name }}<h4 class="subtitle">by {{ . }}</h4>{{ end }}
+        <hr />
+    </header>
+    <section class="container article-content">
+      <div class="article-sidebar col-sm-3">
+          <ul class="sidebar-info">
+            {{ with .Params.album }}
+            {{ with .image }}
+            {{ $imageUrl := replace . "/60x60bb.jpg" "/600x600bb.jpg" }}
+            <li>
+              <a href="{{ $.Params.album.link }}">
+                <img class="album-image" src="{{ $imageUrl }}" alt="{{ $.Params.album.title }}" />
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}
+            {{ with .Params.album.title }}
+            <li class="text-muted">Album: <a href="{{ $.Params.album.link }}">{{ . }}</a></li>
+            {{ end }}
+            {{ with .Params.artist_name }}
+            <li class="text-muted">Artist: <a href="{{ $.Params.artist_view_url }}">{{ . }}</a></li>
+            {{ end }}
+            {{ if and .Params.disc_number .Params.track_number }}
+            <li class="text-muted">
+              Track {{ .Params.track_number }}
+              {{ if gt .Params.disc_count 1 }} (Disc {{ .Params.disc_number }}){{ end }}
+            </li>
+            {{ end }}
+            {{ with .Params.track_duration_formatted }}
+            <li class="text-muted">Duration: {{ . }}</li>
+            {{ end }}
+            {{ with .Params.release_date }}
+            <li class="text-muted">Released: <time datetime="{{ . }}">{{ dateFormat "Jan 2, 2006" . }}</time></li>
+            {{ end }}
+            {{ with .Params.primary_genre_name }}
+            <li class="text-muted">Genre: {{ . }}</li>
+            {{ end }}
+            {{ with .Params.track_price }}
+            <li class="text-muted">Price: ${{ . }} {{ $.Params.currency }}</li>
+            {{ end }}
+            {{ if .Params.track_explicitness }}
+            {{ if eq .Params.track_explicitness "explicit" }}
+            <li class="text-muted"><span class="label label-warning">Explicit</span></li>
+            {{ end }}
+            {{ end }}
+            {{ if .Params.is_streamable }}
+            <li class="text-muted"><span class="label label-success">Streamable</span></li>
+            {{ end }}
+          </ul>
+          <ul class="sidebar-purchase">
+            {{ $audioSrc := "" }}
+            {{ if .Params.preview_url }}
+              {{ $audioSrc = .Params.preview_url }}
+            {{ else if .Params.song.preview }}
+              {{ $audioSrc = .Params.song.preview }}
+            {{ else if .Params.song.m4a }}
+              {{ $audioSrc = .Params.song.m4a }}
+            {{ end }}
+            {{ if $audioSrc }}
+            <li>
+              <div id="1" class="song-player" data-src="{{ $audioSrc }}" title="{{ .Title }}">
+                <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+                <div id="jp_container_1" class="jp-audio-stream">
+                  <div class="jp-type-single">
+                    <div class="jp-gui jp-interface">
+                      <ul class="jp-controls">
+                        <li><a href="javascript:;" class="jp-play" tabindex="1"><i class="fa fa-play"></i></a></li>
+                        <li><a href="javascript:;" class="jp-pause" tabindex="1"><i class="fa fa-pause"></i></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li>
+            {{ end }}
+            {{ with .Params.purchase.itunes }}
+            <li><a href="{{ . }}" title="Buy on iTunes" target="_blank"><i class="fa fa-apple"></i></a></li>
+            {{ end }}
+            {{ with .Params.purchase.spotify }}
+            <li><a href="{{ . }}" title="Listen on Spotify" target="_blank"><i class="fa fa-spotify"></i></a></li>
+            {{ end }}
+            {{ with .Params.purchase.amazon }}
+            <li><a href="{{ . }}" title="Buy on Amazon" target="_blank">a</a></li>
+            {{ end }}
+            {{ with .Params.track_view_url }}
+            <li><a href="{{ . }}" title="View on Apple Music" target="_blank"><i class="fa fa-music"></i></a></li>
+            {{ end }}
+          </ul>
+      </div>
+      <div class="col-sm-9">
+          {{ .Content }}
+      </div>
+    </section>
+    {{ partial "articlefooter.html" . }}
+  </article>
+</div>
+{{ partial "footer.html" . }}
