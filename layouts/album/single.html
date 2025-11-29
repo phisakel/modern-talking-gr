@@ -44,16 +44,16 @@
           </ul>
           <ul class="sidebar-purchase">
             {{ with .Params.purchase.itunes }}
-            <li><a href="{{ . }}" title="Buy on iTunes" target="_blank"><i class="fa fa-apple"></i></a></li>
+            <li><a href="{{ . }}" class="btn btn-default btn-sm" title="Buy on iTunes" target="_blank"><i class="fa fa-apple"></i> iTunes</a></li>
             {{ end }}
             {{ with .Params.purchase.spotify }}
-            <li><a href="{{ . }}" title="Listen on Spotify" target="_blank"><i class="fa fa-spotify"></i></a></li>
+            <li><a href="{{ . }}" class="btn btn-default btn-sm" title="Listen on Spotify" target="_blank"><i class="fa fa-spotify"></i> Spotify</a></li>
             {{ end }}
             {{ with .Params.purchase.amazon }}
-            <li><a href="{{ . }}" title="Buy on Amazon" target="_blank">a</a></li>
+            <li><a href="{{ . }}" class="btn btn-default btn-sm" title="Buy on Amazon" target="_blank"><i class="fa fa-amazon"></i> Amazon</a></li>
             {{ end }}
             {{ with .Params.collection_view_url }}
-            <li><a href="{{ . }}" title="View on Apple Music" target="_blank"><i class="fa fa-music"></i></a></li>
+            <li><a href="{{ . }}" class="btn btn-default btn-sm" title="View on Apple Music" target="_blank"><i class="fa fa-music"></i> Apple Music</a></li>
             {{ end }}
           </ul>
           {{ with .Params.copyright }}
