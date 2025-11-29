@@ -3,6 +3,13 @@ languageCode: en-us
 title: Modern Talking GR
 subtitle: The unofficial Greek Fan Club of Modern Talking
 theme: stage
+
+# Allow raw HTML in markdown content
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
 params:
 
   # Website information
@@ -28,7 +35,7 @@ params:
   # Navbar links
   navbar:
     blog: "/post/"
-    bio: "/"
+    bio: "/bio/"
     music: "/album/"
     events: "/event/"
     media: "/media/"
