@@ -38,9 +38,6 @@ This site showcases the complete Modern Talking discography with 37 albums and 5
 │   └── partials/     # Reusable template components
 ├── static/           # Static assets (CSS, JS, images)
 ├── data/             # SQLite database (gitignored)
-├── scripts/          # Content generation scripts
-│   ├── generate-content.js
-│   └── generate-albums.js
 └── hugo.yaml         # Hugo configuration
 
 ```
