@@ -4,7 +4,8 @@
   "description": "A Hugo-powered website dedicated to Modern Talking, featuring a comprehensive database of albums, tracks, and artist information.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "tinacms dev -c \"hugo server -D\"",
+    "build": "tinacms build && hugo"
   },
   "keywords": [],
   "author": "",
