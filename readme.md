@@ -93,3 +93,13 @@ Site uses custom layouts in the root `layouts/` directory (no theme dependency):
 ## Deployment
 
 Configured for Netlify deployment via `netlify.toml`
+
+## Music quiz
+
+The [music quiz](https://modern-talking-gr.netlify.app/quiz/) has 10 fixed sets of 10 questions. Each question plays an existing preview and offers four distinct song titles. Players enter a name or nickname, get one point per correct first answer, and can submit their final score.
+
+Scores use **Netlify Forms**, with no additional database or credentials. Before deploying the quiz, enable **Forms → Enable form detection** in the Netlify project dashboard. After deployment, submissions appear under **Forms → music-quiz-scores** with the player name, set, correct answers, total questions, quiz version, and attempt ID. These records are private to the site's administrators. Players explicitly choose whether to submit at the end.
+
+This is a casual, client-scored quiz: submissions are not tamper-proof and should not be used for prizes or verified rankings. Netlify's form quotas and spam filtering apply. Local Hugo previews let users play but do not save scores; the UI reports this instead of claiming a save succeeded. Failed submissions can be retried without losing the result.
+
+The question bank is `static/quiz-questions.json`. To rebuild it deterministically from the song content, run `python3 scripts/generate-quiz.py`. It selects 100 unique titles with preview URLs, excluding remixes/medleys as separate questions. Preview availability depends on the audio provider; unavailable samples can be skipped for zero points. Run quiz checks with `node --test tests/quiz.test.mjs`.

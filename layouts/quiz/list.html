@@ -1,0 +1,49 @@
+{{ partial "head.html" . }}
+{{ partial "navbar.html" . }}
+<link rel="stylesheet" href="/css/quiz.css">
+<main class="container quiz-page" id="main-container">
+  <header class="page-header">
+    <p class="eyebrow">A FEW SECONDS. A FAMILIAR FEELING.</p>
+    <h1 class="title">Know the melody?</h1>
+    <p class="lead">Listen to a sample. Pick the title. Find out how well you know Modern Talking.</p>
+  </header>
+  <noscript><p class="quiz-notice">Please enable JavaScript to play the music quiz.</p></noscript>
+  <p id="quiz-loading" role="status">Getting the music ready…</p>
+  <button id="quiz-reload" class="btn btn-default" hidden>Try loading again</button>
+  <section id="quiz-setup" hidden aria-labelledby="set-heading">
+    <div class="section-heading"><div><p class="eyebrow">100 SONGS TO RECOGNISE</p><h2 id="set-heading">Choose your set.</h2></div><p class="text-muted">10 questions · 4 choices · 1 point per hit</p></div>
+    <form id="quiz-start">
+      <fieldset class="quiz-sets"><legend class="sr-only">Choose one of ten quiz sets</legend>
+        {{ range seq 10 }}<label class="quiz-set"><input type="radio" name="quiz-set" value="{{ . }}" {{ if eq . 1 }}checked{{ end }}><span><strong>Set {{ printf "%02d" . }}</strong><small>10 songs <span aria-hidden="true">↗</span></small></span></label>{{ end }}
+      </fieldset>
+      <div class="quiz-start-panel"><div><label for="player-name">Your name or nickname</label><input id="player-name" name="player-name" autocomplete="nickname" maxlength="60" required placeholder="What should we call you?" aria-describedby="name-note"><p id="name-note" class="quiz-help">Your name and score are sent to the fan club only when you choose “Save score” at the end.</p></div><button class="btn btn-primary" type="submit">Let’s play <span aria-hidden="true">→</span></button></div>
+    </form>
+  </section>
+  <section id="quiz-play" class="quiz-panel" hidden aria-labelledby="question-heading">
+    <div class="quiz-round-meta"><span id="quiz-set-label"></span><span id="quiz-score"></span></div>
+    <progress id="quiz-progress" max="10" value="0" aria-label="Questions completed"></progress>
+    <p id="question-number" class="eyebrow"></p>
+    <h2 id="question-heading" tabindex="-1">Which song is this?</h2>
+    <div class="quiz-listen"><span class="quiz-disc" aria-hidden="true">♪</span><div><p>Press play. Trust your ears.</p><audio id="quiz-audio" controls preload="none" aria-label="Mystery song preview"></audio></div></div>
+    <p id="audio-status" role="status" class="quiz-help"></p>
+    <div id="quiz-answers" class="quiz-answers" aria-label="Choose a song title"></div>
+    <p id="quiz-feedback" class="quiz-feedback" role="status"></p>
+    <div class="quiz-controls"><button id="quiz-next" class="btn btn-primary" disabled>Next question →</button><button id="quiz-skip" class="btn btn-default" hidden>Skip unavailable sample (0 points)</button></div>
+    <p class="quiz-help">Replay as often as you like. Your first answer counts.</p>
+  </section>
+  <section id="quiz-results" hidden aria-labelledby="results-heading">
+    <div class="quiz-panel quiz-result-panel"><p class="eyebrow">THAT’S A WRAP</p><h2 id="results-heading" tabindex="-1">Your result</h2><p id="result-player"></p><p class="quiz-result-number"><strong id="result-score"></strong><span>/ 10</span></p><p id="result-message"></p>
+      <form id="quiz-save" name="music-quiz-scores" method="POST" action="/quiz/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="music-quiz-scores">
+        <p hidden><label>Leave this blank<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+        <input type="hidden" name="player-name"><input type="hidden" name="set-number"><input type="hidden" name="correct-answers"><input type="hidden" name="total-questions" value="10"><input type="hidden" name="quiz-version"><input type="hidden" name="attempt-id">
+        <button id="save-score" class="btn btn-primary" type="submit">Save score</button><p class="quiz-help">Sends your name, set, and result to the fan club. Scores are private, not a public leaderboard.</p>
+        <p id="save-status" role="status"></p>
+      </form>
+      <button id="quiz-again" class="btn btn-default">Choose another set</button>
+    </div>
+    <section class="quiz-review" aria-labelledby="review-heading"><h2 id="review-heading">Your track-by-track recap</h2><ol id="quiz-review-list"></ol></section>
+  </section>
+</main>
+<script type="module" src="/js/quiz.js"></script>
+{{ partial "footer.html" . }}

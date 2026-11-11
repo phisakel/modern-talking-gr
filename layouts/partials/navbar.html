@@ -6,6 +6,7 @@
       <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
       <a href="/album/" {{ if eq .Section "album" }}aria-current="page"{{ end }}>Discography</a>
       <a href="/song/" {{ if eq .Section "song" }}aria-current="page"{{ end }}>Songs</a>
+      <a href="/quiz/" {{ if eq .Section "quiz" }}aria-current="page"{{ end }}>Music quiz</a>
       <a href="/bio/" {{ if eq .Section "bio" }}aria-current="page"{{ end }}>The story <span aria-hidden="true">↗</span></a>
     </div>
   </nav>
