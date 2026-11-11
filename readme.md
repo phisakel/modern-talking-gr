@@ -2,6 +2,8 @@
 
 A Hugo-powered website dedicated to Modern Talking, featuring a comprehensive database of albums, tracks, and artist information.
 
+**Production site:** [modern-talking-gr.netlify.app](https://modern-talking-gr.netlify.app/)
+
 ## Overview
 
 This site showcases the complete Modern Talking discography with 37 albums and 580 tracks, featuring high-resolution album artwork, 30-second audio previews via jPlayer, and direct purchase links to iTunes, Spotify, Amazon, and Apple Music.
