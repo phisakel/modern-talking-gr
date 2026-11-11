@@ -1,26 +1,12 @@
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Params.title }}</a>
+<header class="site-header">
+  <nav class="site-nav container" aria-label="Main navigation">
+    <a class="site-brand" href="/" aria-label="Modern Talking GR home"><span><img class="brand-logo" src="/images/modern-talking-wordmark.svg" width="600" height="170" alt="Modern Talking"><small>GREEK FAN CLUB</small></span></a>
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu">Menu <span aria-hidden="true">☰</span></button>
+    <div class="site-menu" id="site-menu">
+      <a href="/" {{ if .IsHome }}aria-current="page"{{ end }}>Home</a>
+      <a href="/album/" {{ if eq .Section "album" }}aria-current="page"{{ end }}>Discography</a>
+      <a href="/song/" {{ if eq .Section "song" }}aria-current="page"{{ end }}>Songs</a>
+      <a href="/bio/" {{ if eq .Section "bio" }}aria-current="page"{{ end }}>The story <span aria-hidden="true">↗</span></a>
     </div>
-    <div class="navbar-collapse collapse">
-      <ul class="nav navbar-nav">
-        {{ with .Site.Params.navbar.bio }}<li><a href="{{ . }}">Bio</a></li>{{ end }}
-        {{ with .Site.Params.navbar.music }}<li><a href="{{ . }}">Music</a></li>{{ end }}
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        {{ with .Site.Params.social.facebook }}<li><a href="{{ . }}"><i class="fa fa-facebook"></i></a></li>{{ end }}
-        {{ with .Site.Params.social.twitter }}<li><a href="{{ . }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
-        {{ with .Site.Params.social.soundcloud }}<li><a href="{{ . }}"><i class="fa fa-soundcloud"></i></a></li>{{ end }}
-        {{ with .Site.Params.social.reverbnation }}<li><a href="{{ . }}"><i class="fa fa-star"></i></a></li>{{ end }}
-        {{ with .Site.Params.social.contact }}<li><a href=""><i class="fa fa-envelope"></i></a></li>{{ end }}
-      </ul>
-    </div><!--/.nav-collapse -->
-  </div>
-</div>
+  </nav>
+</header>

@@ -31,12 +31,13 @@
               </tr>
             </thead>
             <tbody>
-              {{ range .Pages }}
+              {{ range .Paginator.Pages }}
+              {{ $song := . }}
               <tr>
                 <td>
                   {{ with .Params.album.image }}
-                  <a href="{{ $.Params.album.link }}">
-                    <img src="{{ . }}" alt="{{ $.Params.album.title }}" style="width:40px; height:40px;">
+                  <a href="{{ $song.Params.album.link }}">
+                    <img src="{{ . }}" alt="{{ $song.Params.album.title }}" style="width:40px; height:40px;">
                   </a>
                   {{ end }}
                 </td>
@@ -54,7 +55,7 @@
                 <td>{{ .Params.artist_name }}</td>
                 <td>
                   {{ with .Params.album.title }}
-                  <a href="{{ $.Params.album.link }}">{{ . }}</a>
+                  <a href="{{ $song.Params.album.link }}">{{ . }}</a>
                   {{ end }}
                 </td>
                 <td class="text-center">

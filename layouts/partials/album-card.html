@@ -1,0 +1,4 @@
+<article class="album-card" data-album-title="{{ .Title | lower }}">
+  <a class="album-card-image" href="{{ .RelPermalink }}"><img src="{{ replace .Params.artwork_url_100 "/100x100bb.jpg" "/600x600bb.jpg" }}" alt="{{ .Title }} album cover" loading="lazy" width="600" height="600"><span class="album-arrow" aria-hidden="true">↗</span></a>
+  <div class="album-card-body"><div class="album-card-meta">{{ with .Params.release_date }}<span>{{ dateFormat "2006" . }}</span>{{ end }}{{ with .Params.track_count }}<span>{{ . }} tracks</span>{{ end }}</div><h3 class="album-card-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3><p class="album-card-artist">{{ .Params.artist_name }}</p></div>
+</article>

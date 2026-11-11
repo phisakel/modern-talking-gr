@@ -1,22 +1,20 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-{{ with .Site.Params.coverimage }}<div id="cover-page" data-stellar-background-ratio="0.25" style="background-image: url({{ . }})">{{ end }}
-  <div class="container">
-    {{ with .Site.Params.title }}<h1 class="cover-title">{{ . }}</h1>{{ end }}
-    {{ with .Site.Params.subtitle }}<h3 class="cover-subtitle">{{ . }}</h3>{{ end }}
-  </div>
-</div>
-<div class="index-wrapper">
-  <div id="main-container" class="container">
-    <div class="col-sm-12">
-      <article>
-        <h3>Recent Posts</h3>
-        <hr />
-        {{ range first 5 (where .Data.Pages "Section" "post") }}
-           {{ .Render "summary"}}
-        {{ end }}
-      </article>
+<main id="main-container" class="home-main">
+  <section class="hero container">
+    <div class="hero-copy">
+      <p class="eyebrow"><span class="status-dot"></span> THE UNOFFICIAL GREEK FAN CLUB</p>
+      <h1>Two voices.<br>One timeless<br><em>feeling.</em></h1>
+      <p class="hero-description">The melodies that never leave you. Rediscover the music, the memories, and the story of Modern Talking.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="/album/">Explore the music <span aria-hidden="true">↗</span></a><a class="text-link" href="/bio/">Meet the duo <span aria-hidden="true">→</span></a></div>
+      <div class="hero-stats"><div><strong>{{ len (where .Site.RegularPages "Section" "album") }}</strong><span>albums to explore</span></div><div><strong>{{ len (where .Site.RegularPages "Section" "song") }}</strong><span>tracks to rediscover</span></div><div><strong>Since ’84</strong><span>forever in our hearts</span></div></div>
     </div>
-  </div>
-</div>
+    <figure class="hero-art"><img src="/mt40.jpg" alt="Dieter Bohlen and Thomas Anders on the Modern Talking 40 anniversary artwork" width="640" height="640" fetchpriority="high"><figcaption><span>THOMAS ANDERS & DIETER BOHLEN</span><span>THE SOUND OF AN ERA</span></figcaption></figure>
+  </section>
+  <div class="era-strip"><div class="container"><span>EUROPOP ICONS</span><span aria-hidden="true">✳</span><span>UNFORGETTABLE MELODIES</span><span aria-hidden="true">✳</span><span>TIMELESS CONNECTION</span></div></div>
+  <section class="container home-discography" aria-labelledby="discovery-title">
+    <div class="section-heading"><div><p class="eyebrow">ON REPEAT, ALWAYS</p><h2 id="discovery-title">Back to the beginning.</h2></div><a class="text-link" href="/album/">View full discography <span aria-hidden="true">↗</span></a></div>
+    <div class="album-grid">{{ range first 4 ((where .Site.RegularPages "Section" "album").ByParam "release_date") }}{{ partial "album-card.html" . }}{{ end }}</div>
+  </section>
+</main>
 {{ partial "footer.html" . }}

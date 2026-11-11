@@ -7,3 +7,7 @@ themes/stage
 
 node_modules
 .env
+
+# Local browser verification artifacts
+.playwright-cli/
+output/playwright/

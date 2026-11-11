@@ -1,65 +1,9 @@
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
-
-<div class="wrapper">
-  <div class="container" id="main-container">
-    <header class="page-header">
-      <h1 class="title">{{ .Site.Params.title | default "Albums" }}</h1>
-      {{ with .Site.Params.subtitle }}<p class="lead">{{ . }}</p>{{ end }}
-      <hr />
-    </header>
-    
-    <div class="row">
-      <div class="col-sm-12">
-        <!-- Album Grid -->
-        <div class="album-grid">
-          {{ $albums := where .Site.RegularPages "Section" "album" }}
-          {{ range $albums.ByParam "release_date" }}
-          {{ $page := . }}
-          <div class="album-card">
-            <div class="album-card-image">
-              <a href="{{ .RelPermalink }}">
-                {{ $imageUrl := replace .Params.artwork_url_100 "/100x100bb.jpg" "/600x600bb.jpg" }}
-                <img src="{{ $imageUrl }}" alt="{{ .Title }}">
-              </a>
-            </div>
-            <div class="album-card-body">
-              <h4 class="album-card-title">
-                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-              </h4>
-              {{ with .Params.artist_name }}
-              <p class="album-card-artist">{{ . }}</p>
-              {{ end }}
-              <div class="album-card-meta">
-                {{ with .Params.release_date }}
-                <span>{{ dateFormat "2006" . }}</span>
-                {{ end }}
-                {{ with .Params.primary_genre_name }}
-                <span class="label label-default">{{ . }}</span>
-                {{ end }}
-              </div>
-              <div class="album-card-info">
-                {{ with .Params.track_count }}
-                <i class="fa fa-music"></i> {{ . }} tracks
-                {{ end }}
-                {{ with .Params.collection_price }}
-                &nbsp;&bull;&nbsp; ${{ . }}
-                {{ end }}
-              </div>
-              <div class="album-card-actions">
-                <a href="{{ .RelPermalink }}" class="btn btn-primary btn-sm">View</a>
-                {{ with .Params.collection_view_url }}
-                <a href="{{ . }}" class="btn btn-default btn-sm" target="_blank" title="Open in iTunes">
-                  <i class="fa fa-apple"></i> iTunes
-                </a>
-                {{ end }}
-              </div>
-            </div>
-          </div>
-          {{ end }}
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<main class="wrapper"><div class="container" id="main-container">
+  <header class="page-header"><p class="eyebrow">THE MODERN TALKING COLLECTION</p><h1 class="title">A lifetime of melodies.</h1><p class="lead">From the first hits to the deep cuts. Find your next favourite.</p></header>
+  <div class="collection-toolbar"><p><strong id="album-count">{{ len .RegularPages }}</strong> releases <span class="text-muted">· earliest to latest</span></p><label class="album-search"> <span class="sr-only">Search albums</span><input type="search" id="album-search" placeholder="Search albums…" aria-controls="album-results"></label></div>
+  <div class="album-grid" id="album-results">{{ range .RegularPages.ByParam "release_date" }}{{ partial "album-card.html" . }}{{ end }}</div>
+  <p id="search-empty" hidden>No albums match your search. Try another title.</p><p class="sr-only" id="search-status" role="status"></p>
+</div></main>
 {{ partial "footer.html" . }}
