@@ -7,6 +7,40 @@ import {
 const $ = (id) => document.getElementById(id);
 const audio = $("quiz-audio");
 const form = $("quiz-save");
+async function loadLeaderboard() {
+  const status = $("leaderboard-status");
+  const table = $("leaderboard-table");
+  const retry = $("leaderboard-retry");
+  retry.hidden = true;
+  status.textContent = "Loading the top scores…";
+  try {
+    const response = await fetch("/.netlify/functions/quiz-leaderboard", {
+      cache: "no-store",
+      signal: AbortSignal.timeout(12000),
+    });
+    if (!response.ok) throw new Error("Leaderboard unavailable");
+    const { players } = await response.json();
+    if (!Array.isArray(players)) throw new Error("Invalid leaderboard");
+    $("leaderboard-players").replaceChildren();
+    players.slice(0, 10).forEach(({ name, score }, index) => {
+      const row = document.createElement("tr");
+      [index + 1, name, `${score} / 10`].forEach((value) => {
+        const cell = document.createElement("td");
+        cell.textContent = value;
+        row.append(cell);
+      });
+      $("leaderboard-players").append(row);
+    });
+    table.hidden = players.length === 0;
+    status.textContent = players.length ? "" : "No scores yet. Play a set and save your score to be the first!";
+  } catch {
+    status.textContent = table.hidden
+      ? "Top scores are temporarily unavailable. Please try again shortly."
+      : "We couldn’t refresh the top scores. Showing the last loaded results.";
+    retry.hidden = false;
+  }
+}
+$("leaderboard-retry").addEventListener("click", loadLeaderboard);
 let bank,
   round,
   player,
@@ -212,7 +246,8 @@ form.addEventListener("submit", async (event) => {
     saved = true;
     $("save-score").textContent = "Score submitted";
     $("save-status").textContent =
-      "Thank you! Your score has been submitted to the fan club.";
+      "Thank you! Your score has been submitted. The leaderboard may take a little time to update.";
+    loadLeaderboard();
   } catch {
     $("save-status").textContent =
       "We couldn’t confirm your score was saved. Your result is still here; please try again.";
@@ -224,3 +259,4 @@ form.addEventListener("submit", async (event) => {
   }
 });
 loadBank();
+loadLeaderboard();

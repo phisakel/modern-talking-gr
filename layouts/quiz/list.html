@@ -16,7 +16,7 @@
       <fieldset class="quiz-sets"><legend class="sr-only">Choose one of ten quiz sets</legend>
         {{ range seq 10 }}<label class="quiz-set"><input type="radio" name="quiz-set" value="{{ . }}" {{ if eq . 1 }}checked{{ end }}><span><strong>Set {{ printf "%02d" . }}</strong><small>10 songs <span aria-hidden="true">↗</span></small></span></label>{{ end }}
       </fieldset>
-      <div class="quiz-start-panel"><div><label for="player-name">Your name or nickname</label><input id="player-name" name="player-name" autocomplete="nickname" maxlength="60" required placeholder="What should we call you?" aria-describedby="name-note"><p id="name-note" class="quiz-help">Your name and score are sent to the fan club only when you choose “Save score” at the end.</p></div><button class="btn btn-primary" type="submit">Let’s play <span aria-hidden="true">→</span></button></div>
+      <div class="quiz-start-panel"><div><label for="player-name">Your name or nickname</label><input id="player-name" name="player-name" autocomplete="nickname" maxlength="60" required placeholder="What should we call you?" aria-describedby="name-note"><p id="name-note" class="quiz-help">Choose “Save score” at the end to publish your nickname and best score on the leaderboard.</p></div><button class="btn btn-primary" type="submit">Let’s play <span aria-hidden="true">→</span></button></div>
     </form>
   </section>
   <section id="quiz-play" class="quiz-panel" hidden aria-labelledby="question-heading">
@@ -35,14 +35,26 @@
     <div class="quiz-panel quiz-result-panel"><p class="eyebrow">THAT’S A WRAP</p><h2 id="results-heading" tabindex="-1">Your result</h2><p id="result-player"></p><p class="quiz-result-number"><strong id="result-score"></strong><span>/ 10</span></p><p id="result-message"></p>
       <form id="quiz-save" name="music-quiz-scores" method="POST" action="/quiz/" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="music-quiz-scores">
+        <input type="hidden" name="public-leaderboard" value="yes">
         <p hidden><label>Leave this blank<input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <input type="hidden" name="player-name"><input type="hidden" name="set-number"><input type="hidden" name="correct-answers"><input type="hidden" name="total-questions" value="10"><input type="hidden" name="quiz-version"><input type="hidden" name="attempt-id">
-        <button id="save-score" class="btn btn-primary" type="submit">Save score</button><p class="quiz-help">Sends your name, set, and result to the fan club. Scores are private, not a public leaderboard.</p>
+        <button id="save-score" class="btn btn-primary" type="submit">Save score</button><p class="quiz-help">Publishes your nickname and best score on the public leaderboard. Use a nickname you’re happy to share.</p>
         <p id="save-status" role="status"></p>
       </form>
       <button id="quiz-again" class="btn btn-default">Choose another set</button>
     </div>
     <section class="quiz-review" aria-labelledby="review-heading"><h2 id="review-heading">Your track-by-track recap</h2><ol id="quiz-review-list"></ol></section>
+  </section>
+  <section class="quiz-leaderboard" aria-labelledby="leaderboard-heading">
+    <div class="section-heading"><div><p class="eyebrow">THE FAN CLUB CHARTS</p><h2 id="leaderboard-heading">Top 10 players</h2></div><p class="text-muted">Your best score. Your place in the charts.</p></div>
+    <p class="quiz-help">Each nickname appears once with its highest saved score across all sets. Ties are listed alphabetically.</p>
+    <p id="leaderboard-status" role="status">Enable JavaScript to load the top scores.</p>
+    <table id="leaderboard-table" hidden>
+      <caption class="sr-only">Top ten quiz players and their best scores out of ten</caption>
+      <thead><tr><th scope="col">Rank</th><th scope="col">Player</th><th scope="col">Top score</th></tr></thead>
+      <tbody id="leaderboard-players"></tbody>
+    </table>
+    <button id="leaderboard-retry" class="btn btn-default" type="button" hidden>Refresh top scores</button>
   </section>
 </main>
 <script type="module" src="/js/quiz.js"></script>
