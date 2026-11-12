@@ -61,7 +61,7 @@ async function loadBank() {
     if (!response.ok) throw new Error("Question bank unavailable");
     bank = await response.json();
     if (
-      bank.sets.length !== 10 ||
+      bank.sets.length !== 14 ||
       bank.sets.some((set) => set.questions.length !== 10)
     )
       throw new Error("Invalid question bank");
@@ -82,10 +82,7 @@ function renderQuestion() {
   const q = round.set.questions[round.index];
   stopAudio();
   audio.src = q.preview;
-  $("quiz-set-label").textContent = `Set ${String(round.set.id).padStart(
-    2,
-    "0"
-  )}`;
+  $("quiz-set-label").textContent = round.set.name;
   $("quiz-score").textContent = `${round.score} correct`;
   $("quiz-progress").value = round.index;
   $("question-number").textContent = `Question ${round.index + 1} of 10`;
@@ -136,9 +133,7 @@ function choose(choice) {
 function finish() {
   stopAudio();
   show("quiz-results");
-  $("result-player").textContent = `${player} · Set ${String(
-    round.set.id
-  ).padStart(2, "0")}`;
+  $("result-player").textContent = `${player} · ${round.set.name}`;
   $("result-score").textContent = round.score;
   $("result-message").textContent =
     round.score === 10
@@ -226,7 +221,7 @@ form.addEventListener("submit", async (event) => {
   // Netlify removes this attribute when it registers the form at deploy time.
   if (form.hasAttribute("data-netlify")) {
     $("save-status").textContent =
-      "Score saving is not available in this preview. You can still play all ten sets.";
+      "Score saving is not available in this preview. You can still play all fourteen sets.";
     return;
   }
   saving = true;

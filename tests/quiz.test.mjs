@@ -10,11 +10,13 @@ import {
 const bank = JSON.parse(
   readFileSync(new URL("../static/quiz-questions.json", import.meta.url))
 );
-test("100 unique questions across ten sets, four distinct titles and exactly one answer", () => {
-  assert.equal(bank.sets.length, 10);
+test("140 unique questions across fourteen named sets, four distinct titles and exactly one answer", () => {
+  assert.equal(bank.sets.length, 14);
+  assert.equal(new Set(bank.sets.map((set) => set.name)).size, 14);
   const titles = new Set();
   for (const [index, set] of bank.sets.entries()) {
     assert.equal(set.id, index + 1);
+    assert.ok(typeof set.name === "string" && set.name.length > 0);
     assert.equal(set.questions.length, 10);
     for (const q of set.questions) {
       assert.equal(q.options.length, 4);
@@ -25,7 +27,7 @@ test("100 unique questions across ten sets, four distinct titles and exactly one
       titles.add(q.title);
     }
   }
-  assert.equal(titles.size, 100);
+  assert.equal(titles.size, 140);
 });
 test("only the first answer counts and unanswered questions cannot advance", () => {
   const round = createRound(bank.sets[0]);

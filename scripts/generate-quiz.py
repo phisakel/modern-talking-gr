@@ -1,4 +1,4 @@
-"""Generate ten repeatable quiz sets from existing Modern Talking previews."""
+"""Generate fourteen repeatable quiz sets from existing Modern Talking previews."""
 import json
 import random
 import re
@@ -21,18 +21,37 @@ for path in sorted((ROOT / 'content/song').glob('*.md')):
     if key not in songs or original == title:
         songs[key] = candidate
 pool = sorted(songs.values(), key=lambda song: song['title'].lower())
-assert len(pool) >= 100
+assert len(pool) >= 140
 rng = random.Random(1984)
 rng.shuffle(pool)
-selected = pool[:100]
+selected = pool[:140]
+# Each pair combines themes from songs in its set. A separate seeded RNG
+# gives repeatable random nicknames without changing the answer choices.
+nickname_choices = [
+    ["Diamond Heroes", "Angie's Peacekeepers"],
+    ["Cinderella's Blackbirds", "Stranded Dreamers"],
+    ["Atlantis Countdown", "Lady Lai's Superstars"],
+    ["Moonlight Drummers", "Sheila's Victory Lap"],
+    ["December Angels", "New York Heartbeats"],
+    ["Arabian Shooting Stars", "Charlene's Golden Hour"],
+    ["Louie's Dream Machines", "Rouge Robotas"],
+    ["Lucky Witchqueens", "Chinatown Dreamers"],
+    ["Cosmic Paris Nights", "Wild Water Princesses"],
+    ["Brooklyn Sky Riders", "Cadillac Angels"],
+    ["Midnight Tango Crew", "Forever Night Owls"],
+    ["Rainbow Swan Riders", "Juliet's Heaven Club"],
+    ["Million Heartbeats", "Heaven's Love Letters"],
+    ["Mystery Warriors", "Cheri's Christmas Hearts"],
+]
+name_rng = random.Random(2026)
 sets = []
-for index in range(10):
+for index in range(14):
     questions = []
     for song in selected[index * 10:(index + 1) * 10]:
         wrong = rng.sample([item['title'] for item in pool if item['title'] != song['title']], 3)
         options = [song['title'], *wrong]
         rng.shuffle(options)
         questions.append({**song, 'options': options})
-    sets.append({'id': index + 1, 'questions': questions})
-(ROOT / 'static/quiz-questions.json').write_text(json.dumps({'version': 1, 'sets': sets}, indent=2, ensure_ascii=False) + '\n')
-print('Generated 10 sets with 10 unique songs each (100 songs total).')
+    sets.append({'id': index + 1, 'name': name_rng.choice(nickname_choices[index]), 'questions': questions})
+(ROOT / 'static/quiz-questions.json').write_text(json.dumps({'version': 2, 'sets': sets}, indent=2, ensure_ascii=False) + '\n')
+print('Generated 14 named sets with 10 unique songs each (140 songs total).')

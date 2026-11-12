@@ -1,3 +1,4 @@
+{{ $bank := readFile "static/quiz-questions.json" | unmarshal }}
 {{ partial "head.html" . }}
 {{ partial "navbar.html" . }}
 <link rel="stylesheet" href="/css/quiz.css">
@@ -11,10 +12,10 @@
   <p id="quiz-loading" role="status">Getting the music ready…</p>
   <button id="quiz-reload" class="btn btn-default" hidden>Try loading again</button>
   <section id="quiz-setup" hidden aria-labelledby="set-heading">
-    <div class="section-heading"><div><p class="eyebrow">100 SONGS TO RECOGNISE</p><h2 id="set-heading">Choose your set.</h2></div><p class="text-muted">10 questions · 4 choices · 1 point per hit</p></div>
+    <div class="section-heading"><div><p class="eyebrow">140 SONGS TO RECOGNISE</p><h2 id="set-heading">Choose your set.</h2></div><p class="text-muted">10 questions · 4 choices · 1 point per hit</p></div>
     <form id="quiz-start">
-      <fieldset class="quiz-sets"><legend class="sr-only">Choose one of ten quiz sets</legend>
-        {{ range seq 10 }}<label class="quiz-set"><input type="radio" name="quiz-set" value="{{ . }}" {{ if eq . 1 }}checked{{ end }}><span><strong>Set {{ printf "%02d" . }}</strong><small>10 songs <span aria-hidden="true">↗</span></small></span></label>{{ end }}
+      <fieldset class="quiz-sets"><legend class="sr-only">Choose one of fourteen quiz sets</legend>
+        {{ range $bank.sets }}<label class="quiz-set"><input type="radio" name="quiz-set" value="{{ .id }}" {{ if eq (int .id) 1 }}checked{{ end }}><span><strong>{{ .name }}</strong><small>Set {{ printf "%02d" (int .id) }} · 10 songs <span aria-hidden="true">↗</span></small></span></label>{{ end }}
       </fieldset>
       <div class="quiz-start-panel"><div><label for="player-name">Your name or nickname</label><input id="player-name" name="player-name" autocomplete="nickname" maxlength="60" required placeholder="What should we call you?" aria-describedby="name-note"><p id="name-note" class="quiz-help">Choose “Save score” at the end to publish your nickname and best score on the leaderboard.</p></div><button class="btn btn-primary" type="submit">Let’s play <span aria-hidden="true">→</span></button></div>
     </form>
