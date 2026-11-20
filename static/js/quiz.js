@@ -22,9 +22,9 @@ async function loadLeaderboard() {
     const { players } = await response.json();
     if (!Array.isArray(players)) throw new Error("Invalid leaderboard");
     $("leaderboard-players").replaceChildren();
-    players.slice(0, 10).forEach(({ name, score }, index) => {
+    players.slice(0, 10).forEach(({ name, score, total }, index) => {
       const row = document.createElement("tr");
-      [index + 1, name, `${score} / 10`].forEach((value) => {
+      [index + 1, name, `${score} / ${total}`].forEach((value) => {
         const cell = document.createElement("td");
         cell.textContent = value;
         row.append(cell);

@@ -10,12 +10,26 @@ export function rankPlayers(submissions) {
     if (!name || name.length > 60 || !/^(?:[0-9]|10)$/.test(String(rawScore))) continue;
     const score = Number(rawScore);
     const key = name.toLocaleLowerCase("en");
-    const previous = players.get(key);
-    if (!previous || score > previous.score) players.set(key, { name, score });
+    if (!players.has(key)) {
+      players.set(key, { name, score: 0, total: 0, attempts: new Set() });
+    }
+    const player = players.get(key);
+    const attemptId = data["attempt-id"];
+    if (typeof attemptId === "string" && attemptId.trim()) {
+      if (player.attempts.has(attemptId)) continue;
+      player.attempts.add(attemptId);
+    }
+    player.score += score;
+    player.total += 10;
   }
   return [...players.values()]
-    .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name, "en"))
-    .slice(0, 10);
+    .sort((a, b) =>
+      b.score * a.total - a.score * b.total ||
+      b.score - a.score ||
+      a.name.localeCompare(b.name, "en")
+    )
+    .slice(0, 10)
+    .map(({ name, score, total }) => ({ name, score, total }));
 }
 
 export async function handler(event) {
