@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "sets": [
     {
       "id": 1,
@@ -1621,6 +1621,238 @@
             "China In Her Eyes",
             "Blue Eyed Couloured Girl",
             "Who Will Be There"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Encore Heartbeats",
+      "questions": [
+        {
+          "id": "403009519",
+          "title": "I'm Gonna Be Strong",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/Music/3d/17/02/mzm.ufumxndm.aac.p.m4a",
+          "options": [
+            "My Lonely Girl",
+            "I'm Gonna Be Strong",
+            "The Night Is Yours - The Night Is Mine",
+            "Don't Worry"
+          ]
+        },
+        {
+          "id": "402990655",
+          "title": "All I Have",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/Music/e4/78/eb/mzm.jglpvlrz.aac.p.m4a",
+          "options": [
+            "You're the Lady of My Heart",
+            "All I Have",
+            "Just Close Your Eyes",
+            "I Will Follow You"
+          ]
+        },
+        {
+          "id": "430455320",
+          "title": "In 100 Years",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/59/52/5f/59525fd8-3aef-fbb5-3447-04e3c5c31052/mzaf_7730913016689182419.plus.aac.p.m4a",
+          "options": [
+            "A Telegram to Your Heart",
+            "Everybody Needs Somebody",
+            "You're the Lady of My Heart",
+            "In 100 Years"
+          ]
+        },
+        {
+          "id": "402990657",
+          "title": "How You Mend a Broken Heart",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/4b/87/87/4b878797-dfc7-1d71-2037-21720f1719c8/mzaf_17325873696168718521.plus.aac.p.m4a",
+          "options": [
+            "With a Little Love",
+            "We Take the Chance",
+            "The Girl Out of My Dreams",
+            "How You Mend a Broken Heart"
+          ]
+        },
+        {
+          "id": "273931292",
+          "title": "Part Time Lover",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/ee/75/fc/ee75fc68-94f3-a38a-fa32-5f3f52106ce4/mzaf_13199032030953539251.plus.aac.p.m4a",
+          "options": [
+            "Part Time Lover",
+            "Locomotion Tango",
+            "Blinded By Your Love",
+            "Run to You"
+          ]
+        },
+        {
+          "id": "298426056",
+          "title": "I'll Never Give You Up",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/84/66/4b/84664be6-764e-8b01-7f0a-df492003a289/mzaf_4524694723887770294.plus.aac.p.m4a",
+          "options": [
+            "Summer In December",
+            "I'll Never Give You Up",
+            "Mrs. Robota",
+            "Anything Is Possible"
+          ]
+        },
+        {
+          "id": "402849109",
+          "title": "Nothing But the Truth",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d7/94/32/d79432aa-98fb-7474-f956-1bf7f2b70c59/mzaf_11818290450851058315.plus.aac.p.m4a",
+          "options": [
+            "Nothing But the Truth",
+            "In 100 Years",
+            "Blackbird",
+            "Should I, Would I, Could I"
+          ]
+        },
+        {
+          "id": "402706179",
+          "title": "There's Something In the Air",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d9/5f/f6/d95ff649-d41e-6840-5c6b-bf727dc32ae5/mzaf_15390910100171845282.plus.aac.p.m4a",
+          "options": [
+            "There's Something In the Air",
+            "In 100 Years",
+            "Lucky Guy",
+            "All I Have"
+          ]
+        },
+        {
+          "id": "269769463",
+          "title": "Princess of the Night",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/43/6c/6d/436c6dda-f5a1-1941-4ea0-1065b8579c27/mzaf_16935761233002990197.plus.aac.p.m4a",
+          "options": [
+            "From Coast to Coast",
+            "Princess of the Night",
+            "Slow Motion",
+            "Can't Let You Go"
+          ]
+        },
+        {
+          "id": "298556086",
+          "title": "The Night Is Yours - The Night Is Mine",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/a0/6e/f7/a06ef7e7-5c78-7200-e8d2-01eeb42abc10/mzaf_3610862689001314901.plus.aac.p.m4a",
+          "options": [
+            "In 100 Years",
+            "Can't Get Enough",
+            "I Can't Give You More",
+            "The Night Is Yours - The Night Is Mine"
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "name": "Encore Superstars",
+      "questions": [
+        {
+          "id": "402848976",
+          "title": "Blackbird",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/1b/bf/c8/1bbfc832-d8d9-11e8-2733-8d59b8c3aaa5/mzaf_15354294555425836588.plus.aac.p.m4a",
+          "options": [
+            "Last Exit to Brooklyn",
+            "Blackbird",
+            "We Are Children of the World",
+            "I'm So Much In Love"
+          ]
+        },
+        {
+          "id": "580943919",
+          "title": "With a Little Love",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/d1/0c/6e/d10c6ea0-2570-b525-3dc4-266dfc71c355/mzaf_13939865036584868748.plus.aac.p.m4a",
+          "options": [
+            "With a Little Love",
+            "Brother Louie",
+            "In 100 Years",
+            "Nothing But the Truth"
+          ]
+        },
+        {
+          "id": "580943913",
+          "title": "You Are Not Alone",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/40/72/5f/40725f67-9eb4-93ce-66ea-02c483378292/mzaf_10286187695793938443.plus.aac.p.m4a",
+          "options": [
+            "Good Girls Go to Heaven - Bad Girls Go to Everywhere",
+            "Don't Let It Get You Down",
+            "You Are Not Alone",
+            "TV Makes the Superstar"
+          ]
+        },
+        {
+          "id": "298423663",
+          "title": "Anything Is Possible",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/34/9e/7f/349e7f2b-78cc-83b4-ec3c-2224074b4194/mzaf_12973662495480426898.plus.aac.p.m4a",
+          "options": [
+            "Anything Is Possible",
+            "Riding On a White Swan",
+            "I'm So Much In Love",
+            "Lucky Guy"
+          ]
+        },
+        {
+          "id": "273931309",
+          "title": "Love Is Forever",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/66/ee/93/66ee9365-ad77-b27d-6b74-11af60b55592/mzaf_3072475812751960025.plus.aac.p.m4a",
+          "options": [
+            "You're Not Lisa",
+            "Love Is Forever",
+            "You Are Not Alone",
+            "For Always and Ever"
+          ]
+        },
+        {
+          "id": "298426024",
+          "title": "Don't Let Me Go",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview115/v4/9a/6b/da/9a6bda61-e8dd-02e5-ddb0-c2f092bceb9d/mzaf_8531694341687291387.plus.aac.p.m4a",
+          "options": [
+            "The Girl Out of My Dreams",
+            "Love Is Forever",
+            "Don't Let Me Go",
+            "Higher Than Heaven"
+          ]
+        },
+        {
+          "id": "273931303",
+          "title": "Fight for the Right Love",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9c/99/a9/9c99a955-9ae1-789d-352b-9a54beb20d1e/mzaf_12685641477168270014.plus.aac.p.m4a",
+          "options": [
+            "Operator Gimme 6 0 9",
+            "Witchqueen of Eldorado",
+            "Fight for the Right Love",
+            "We Take the Chance"
+          ]
+        },
+        {
+          "id": "402990659",
+          "title": "It's Your Smile",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/cd/c6/71/cdc6715d-77ee-1ca8-aea4-ea7263040306/mzaf_16373019694372823735.plus.aac.p.m4a",
+          "options": [
+            "Arabian Gold",
+            "Princess of the Night",
+            "It's Your Smile",
+            "Everybody Needs Somebody"
+          ]
+        },
+        {
+          "id": "273931304",
+          "title": "Walking In the Rain of Paris",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/9b/b5/ee/9bb5eef3-5292-94bc-0a49-39e0ed580cc6/mzaf_2372163234207474344.plus.aac.p.m4a",
+          "options": [
+            "Walking In the Rain of Paris",
+            "Shooting Star",
+            "Run to You",
+            "Locomotion Tango"
+          ]
+        },
+        {
+          "id": "403009523",
+          "title": "You're Not Lisa",
+          "preview": "https://audio-ssl.itunes.apple.com/itunes-assets/Music/36/b2/4a/mzm.fqxgktjp.aac.p.m4a",
+          "options": [
+            "You're Not Lisa",
+            "Don't Make Me Blue",
+            "Geronimo's Cadillac",
+            "10 Seconds to Countdown"
           ]
         }
       ]

@@ -61,7 +61,7 @@ async function loadBank() {
     if (!response.ok) throw new Error("Question bank unavailable");
     bank = await response.json();
     if (
-      bank.sets.length !== 14 ||
+      bank.sets.length !== 16 ||
       bank.sets.some((set) => set.questions.length !== 10)
     )
       throw new Error("Invalid question bank");
@@ -221,7 +221,7 @@ form.addEventListener("submit", async (event) => {
   // Netlify removes this attribute when it registers the form at deploy time.
   if (form.hasAttribute("data-netlify")) {
     $("save-status").textContent =
-      "Score saving is not available in this preview. You can still play all fourteen sets.";
+      "Score saving is not available in this preview. You can still play all sixteen sets.";
     return;
   }
   saving = true;

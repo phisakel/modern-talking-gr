@@ -1,4 +1,4 @@
-"""Generate fourteen repeatable quiz sets from existing Modern Talking previews."""
+"""Generate sixteen repeatable quiz sets from existing Modern Talking previews."""
 import json
 import random
 import re
@@ -25,6 +25,13 @@ assert len(pool) >= 140
 rng = random.Random(1984)
 rng.shuffle(pool)
 selected = pool[:140]
+# Keep the original fourteen sets stable. Encore sets use remaining songs
+# plus a repeatable sample of earlier songs, without repeats between them.
+encore_rng = random.Random(2027)
+encore = pool[140:160]
+encore += encore_rng.sample(selected, 20 - len(encore))
+encore_rng.shuffle(encore)
+selected += encore
 # Each pair combines themes from songs in its set. A separate seeded RNG
 # gives repeatable random nicknames without changing the answer choices.
 nickname_choices = [
@@ -42,10 +49,12 @@ nickname_choices = [
     ["Rainbow Swan Riders", "Juliet's Heaven Club"],
     ["Million Heartbeats", "Heaven's Love Letters"],
     ["Mystery Warriors", "Cheri's Christmas Hearts"],
+    ["Encore Heartbeats", "Encore Dreamers"],
+    ["Midnight Encore", "Encore Superstars"],
 ]
 name_rng = random.Random(2026)
 sets = []
-for index in range(14):
+for index in range(16):
     questions = []
     for song in selected[index * 10:(index + 1) * 10]:
         wrong = rng.sample([item['title'] for item in pool if item['title'] != song['title']], 3)
@@ -53,5 +62,5 @@ for index in range(14):
         rng.shuffle(options)
         questions.append({**song, 'options': options})
     sets.append({'id': index + 1, 'name': name_rng.choice(nickname_choices[index]), 'questions': questions})
-(ROOT / 'static/quiz-questions.json').write_text(json.dumps({'version': 2, 'sets': sets}, indent=2, ensure_ascii=False) + '\n')
-print('Generated 14 named sets with 10 unique songs each (140 songs total).')
+(ROOT / 'static/quiz-questions.json').write_text(json.dumps({'version': 3, 'sets': sets}, indent=2, ensure_ascii=False) + '\n')
+print('Generated 16 named sets with 10 distinct songs each (160 questions total).')

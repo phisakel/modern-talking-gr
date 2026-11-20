@@ -10,14 +10,15 @@ import {
 const bank = JSON.parse(
   readFileSync(new URL("../static/quiz-questions.json", import.meta.url))
 );
-test("140 unique questions across fourteen named sets, four distinct titles and exactly one answer", () => {
-  assert.equal(bank.sets.length, 14);
-  assert.equal(new Set(bank.sets.map((set) => set.name)).size, 14);
+test("sixteen named sets with 160 questions, four distinct titles and exactly one answer", () => {
+  assert.equal(bank.sets.length, 16);
+  assert.equal(new Set(bank.sets.map((set) => set.name)).size, 16);
   const titles = new Set();
   for (const [index, set] of bank.sets.entries()) {
     assert.equal(set.id, index + 1);
     assert.ok(typeof set.name === "string" && set.name.length > 0);
     assert.equal(set.questions.length, 10);
+    assert.equal(new Set(set.questions.map((q) => q.title)).size, 10);
     for (const q of set.questions) {
       assert.equal(q.options.length, 4);
       assert.equal(new Set(q.options).size, 4);
@@ -27,7 +28,9 @@ test("140 unique questions across fourteen named sets, four distinct titles and 
       titles.add(q.title);
     }
   }
-  assert.equal(titles.size, 140);
+  assert.equal(titles.size, 141);
+  assert.equal(new Set(bank.sets.slice(0, 14).flatMap((set) => set.questions.map((q) => q.title))).size, 140);
+  assert.equal(new Set(bank.sets.slice(14).flatMap((set) => set.questions.map((q) => q.title))).size, 20);
 });
 test("only the first answer counts and unanswered questions cannot advance", () => {
   const round = createRound(bank.sets[0]);
